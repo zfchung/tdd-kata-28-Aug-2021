@@ -1,6 +1,5 @@
 export function add(input: string): number {
-  if (input) {
-    return parseInt(input);
-  }
-  return 0;
+  const stringValue = input ? input : "0";
+  const numberValue = parseInt(stringValue);
+  return numberValue;
 }
