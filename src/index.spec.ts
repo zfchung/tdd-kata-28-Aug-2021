@@ -22,5 +22,12 @@ describe("Test add function", () => {
 
   it("should allow new line '\n' and comma ',' as delimiter", () => {
     expect(add("1\n2,3")).toBe(6);
+    expect(add("1\n2\n33")).toBe(36);
+  });
+
+  it("should support different custom delimiters", () => {
+    expect(add("//;\n1;2;3")).toBe(6);
+    expect(add("//,\n1,2,3")).toBe(6);
+    expect(add("//@\n1@2@3")).toBe(6);
   });
 });
