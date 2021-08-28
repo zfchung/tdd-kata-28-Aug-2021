@@ -9,4 +9,9 @@ describe("Test add function", () => {
     expect(add("1")).toEqual(1);
     expect(add("99")).toEqual(99);
   });
+
+  it("should return sum of 2 numbers", () => {
+    expect(add("1,2")).toEqual(3);
+    expect(add("11,99")).toEqual(110);
+  });
 });
