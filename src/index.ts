@@ -9,7 +9,7 @@ export function add(input: string): number {
   const valueList = standardDelimiterString.split(",");
   const numberValueList = valueList.map(Number);
   const negativeValueList = numberValueList.filter((value) => value < 0);
-  const hasNegative = numberValueList.some((value) => value < 0);
+  const hasNegative = negativeValueList.length > 0;
   if (hasNegative) {
     const negativeValueString = negativeValueList.join(",");
     throw "Negatives not allowed: " + negativeValueString;
