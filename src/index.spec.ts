@@ -19,4 +19,8 @@ describe("Test add function", () => {
     expect(add("1,1,1,1,1,1,1,1,1,1")).toEqual(10);
     expect(add("1,22,333")).toEqual(356);
   });
+
+  it("should allow new line '\n' and comma ',' as delimiter", () => {
+    expect(add("1\n2,3")).toBe(6);
+  });
 });

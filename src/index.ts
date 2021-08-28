@@ -1,6 +1,6 @@
 export function add(input: string): number {
   const stringValue = input ? input : "0";
-  const valueList = stringValue.split(",");
+  const valueList = stringValue.replaceAll("\n", ",").split(",");
   const numberValueList = valueList.map(Number);
   const sumValue = sumListItems(numberValueList);
   return sumValue;
