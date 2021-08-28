@@ -14,4 +14,9 @@ describe("Test add function", () => {
     expect(add("1,2")).toEqual(3);
     expect(add("11,99")).toEqual(110);
   });
+
+  it("should return sum of unknown amount of numbers", () => {
+    expect(add("1,1,1,1,1,1,1,1,1,1")).toEqual(10);
+    expect(add("1,22,333")).toEqual(356);
+  });
 });
