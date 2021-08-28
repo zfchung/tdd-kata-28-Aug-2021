@@ -32,8 +32,8 @@ describe("Test add function", () => {
   });
 
   it("should throw exception for negative numbers", () => {
-    expect(() => add("1,2,-3")).toThrow("Negatives not allowed");
-    expect(() => add("-1\n-2,-3")).toThrow("Negatives not allowed");
-    expect(() => add("//;\n-1;-2;3")).toThrow("Negatives not allowed");
+    expect(() => add("1,2,-3")).toThrow("Negatives not allowed: -3");
+    expect(() => add("-1\n-2,-3")).toThrow("Negatives not allowed: -1,-2,-3");
+    expect(() => add("//;\n-1;-2;3")).toThrow("Negatives not allowed: -1,-2");
   });
 });

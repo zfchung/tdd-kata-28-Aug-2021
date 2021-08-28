@@ -10,7 +10,10 @@ export function add(input: string): number {
   const numberValueList = valueList.map(Number);
   const hasNegative = numberValueList.some((value) => value < 0);
   if (hasNegative) {
-    throw "Negatives not allowed";
+    const negativeValueString = numberValueList
+      .filter((value) => value < 0)
+      .join(",");
+    throw "Negatives not allowed: " + negativeValueString;
   }
   const sumValue = sumListItems(numberValueList);
   return sumValue;
