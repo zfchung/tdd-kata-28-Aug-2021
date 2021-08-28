@@ -26,8 +26,14 @@ describe("Test add function", () => {
   });
 
   it("should support different custom delimiters", () => {
-    expect(add("//;\n1;2;3")).toBe(6);
-    expect(add("//,\n1,2,3")).toBe(6);
-    expect(add("//@\n1@2@3")).toBe(6);
+    expect(add("//;\n1;2;3")).toEqual(6);
+    expect(add("//,\n1,2,3")).toEqual(6);
+    expect(add("//@\n1@2@3")).toEqual(6);
+  });
+
+  it("should throw exception for negative numbers", () => {
+    expect(() => add("1,2,-3")).toThrow("Negatives not allowed");
+    expect(() => add("-1\n-2,-3")).toThrow("Negatives not allowed");
+    expect(() => add("//;\n-1;-2;3")).toThrow("Negatives not allowed");
   });
 });
